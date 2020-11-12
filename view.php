@@ -39,6 +39,7 @@
 
 
 <br/>
+<a href="index.php" class="btn btn-primary">Home</a> 
 <a href="viewrecords.php" class="btn btn-info">Back to List</a> 
 <a href="edit.php?id=<?php echo $results['attendee_id'] ?>" class="btn btn-warning">Edit</a> 
 <a onclick="return confirm('Are you sure you want to delete this record');" 

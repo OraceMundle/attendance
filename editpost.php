@@ -20,8 +20,7 @@
 
 
         //Redirect to viewrecords.php
-        //page not redirecting
-        if($result == true){
+        if($result){
             header("Location: viewrecords.php");
         }else{
             //echo 'error';

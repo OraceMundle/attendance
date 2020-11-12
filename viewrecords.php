@@ -87,7 +87,7 @@
 
 
 <br />
-<a href="index.php" class="btn btn-info">Home</a> 
+<a href="index.php" class="btn btn-primary">Home</a> 
 <br />
 <br />
 <br />

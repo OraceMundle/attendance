@@ -14,7 +14,7 @@
         }
         
         //insert function
-        public function insertAttendees($fname, $lname, $dob, $email, $contact, $speciality){
+        public function insertAttendee($fname, $lname, $dob, $email, $contact, $speciality){
 
             try {
                 //define sql statement to be executed
@@ -54,7 +54,7 @@
                 try {
                 $sql =  "UPDATE `attendee` SET `firstname`= :fname,`lastname`=
                 :lname,`dateofbirth`= :dob,`emailaddress`= :email,`contactnumber`= :contact,
-                `speciality_id`= speciality  WHERE attendee_id = :id";
+                `speciality_id`= :speciality  WHERE attendee_id = :id";
                 
                 $stmt = $this->db->prepare($sql);
                 //binding all placeholders to the actual values

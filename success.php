@@ -16,13 +16,15 @@
         $speciality = $_POST['speciality']; 
         
         //Call function to insert and track if success or not
-        $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $speciality);
+        $isSuccess = $crud->insertAttendee($fname, $lname, $dob, $email, $contact, $speciality);
        
         if($isSuccess){
 
             //echo 'Registration Successful'; Not displaying
             //echo '<h1 class="text-center text-success">Registration Successful!!!</h1>';
             include 'includes/successmessage.php';
+
+         
             
         } else{
 
@@ -37,7 +39,7 @@
 
 <!-- H1 tag for Title page -->
 <br />
-<!--<h1 class="text-center text-success">Registration Successful</h1>-->
+<h1 class="text-center text-success">Registration Successful</h1>
 <br />
 <br />
 
