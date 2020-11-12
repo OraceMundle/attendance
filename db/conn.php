@@ -1,11 +1,24 @@
 <!-- creating a database connection-->
 <?php
 
-//creating variable for localhost, you assign either the IP address or the word localhost
+//Development connection
+/* 
 $host = '127.0.0.1'; 
 $db = 'attendance_db';
 $user = 'root';
 $pass = '';
+//charset variable
+$charset = 'utf8mb4';
+*/
+
+
+
+//creating variable for localhost, you assign either the IP address or the word localhost
+//Remote Database Connection
+$host = 'remotemysql.com'; 
+$db = '7kD87XtklJ';
+$user = '7kD87XtklJ';
+$pass = 'lRIBbjXV8r';
 //charset variable
 $charset = 'utf8mb4';
 //odbc like connector for mysql connector
