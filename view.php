@@ -9,7 +9,7 @@
     
     if(!isset($_GET['id'])){
        //not displaying
-        //echo "<h1 class='text-danger'>Please verify information and try again </h1>";    
+        echo "<h1 class='text-danger'>Please verify information and try again </h1>";    
         include ' includes/errormessage.php';
        
     } else{

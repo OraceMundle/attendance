@@ -1,3 +1,10 @@
+<?php
+  //This includes the session file, This file contains code that starts/resumes a session
+  //By havng it in the header file, it will be included on every page, allowing session capability to be used on every page across the website
+  include_once 'includes/session.php'
+?>
+
+
 <!doctype html>
 <html lang="en">
 
@@ -57,7 +64,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
+            <div class="navbar-nav mr-auto">
                 <a class="nav-link active" href="index.php">Home <span class="sr-only">(current)</span></a>
                 <a class="nav-link" href="viewrecords.php">View Attendees</a>
                 
@@ -66,6 +73,11 @@
                 <a class="nav-link" href="#">Pricing</a>
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 -->
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a class="nav-link active" href="login.php">Login <span class="sr-only">(current)</span></a>
+                <!--<a class="nav-link" href="viewrecords.php">View Attendees</a>--> 
+                            
             </div>
         </div>
         </nav>
