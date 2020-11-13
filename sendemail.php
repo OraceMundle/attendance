@@ -12,7 +12,7 @@
 
                     //email object calling a new object of SendGrid
                     $email = new \SendGrid\Mail\Mail();
-                    $email->setFrom("oracemundle@gmail.com","Orace Mundle" );
+                    $email->setFrom("mundlepoo@hotmail.com","Orace Mundle" );
                     $email->setSubject($subject);
                     $email->addTo($to);
                     $email->addContent("text/plain", $content);
