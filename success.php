@@ -4,6 +4,8 @@
     $title = 'Success';
     require_once 'includes/header.php'; 
     require_once 'db/conn.php';
+    require_once 'sendemail.php';
+
     
     //checking to see if 
     if(isset($_POST['submit'])){
@@ -17,11 +19,13 @@
         
         //Call function to insert and track if success or not
         $isSuccess = $crud->insertAttendee($fname, $lname, $dob, $email, $contact, $speciality);
+        $specialityName = $crud->getSpecialitiesById($speciality);
        
         if($isSuccess){
 
             //echo 'Registration Successful'; Not displaying
             //echo '<h1 class="text-center text-success">Registration Successful!!!</h1>';
+            SendEmail::SendMail($email, 'Welcome to IT Confernece 2020', 'You have successfully registered for this year\'s IT Conference ');
             include 'includes/successmessage.php';
 
          
@@ -48,7 +52,7 @@
 <div class="card" style="width: 25rem;">
     <div class="card-body">
         <h5 class="card-title"><?php echo $_POST['firstname'] . ' ' . $_POST['lastname'];   ?></h5>
-        <h6 class="card-subtitle mb-2 text-muted"><?php  echo $_POST['speciality'];  ?></h6>
+        <h6 class="card-subtitle mb-2 text-muted"><?php  echo  $specialityName['name']; //$_POST['speciality'];  ?></h6>
         <p class="card-text">Date of Birth: <?php    echo $_POST['dob']; ?> </p>
         <p class="card-text">Email Address: <?php     echo $_POST['exampleInputEmail1']; ?> </p>
         <p class="card-text">Phone Number: <?php    echo $_POST['phone']; ?> </p>

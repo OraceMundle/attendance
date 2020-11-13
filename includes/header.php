@@ -75,9 +75,21 @@
                 -->
             </div>
             <div class="navbar-nav ml-auto">
+                <?php 
+
+                  if(!isset($_SESSION['userid'])) {
+
+                ?>
+                
                 <a class="nav-link active" href="login.php">Login <span class="sr-only">(current)</span></a>
                 <!--<a class="nav-link" href="viewrecords.php">View Attendees</a>--> 
-                            
+                        
+                  <?php } else { ?>
+                <a class="nav-item nav-link active" href="a"><span> Hello <?php echo $_SESSION['username']  ?> ! </span><span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link active" href="logout.php">Logout <span class="sr-only">(current)</span></a>     
+
+                  <?php  }?>
+
             </div>
         </div>
         </nav>

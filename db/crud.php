@@ -1,4 +1,4 @@
-<!-- crud file (create read update delete)->
+<!-- crud file (create read update delete)-->
 <?php
     class crud
     
@@ -145,6 +145,29 @@
 
            
         }//end of get Specialities function
+
+
+        //get Specialities function by ID
+        public function getSpecialitiesById($id){
+
+            try {
+                //code...
+                $sql = "SELECT * FROM `specialities` WHERE speciality_id = :id";
+                $stmt = $this->db->prepare($sql);
+                $stmt->bindparm(':id', $id);
+                $stmt->execute();
+                $result = $stmt->fetch();
+                return $result;
+    
+
+            } catch (PDOException $e) {
+                echo $e->getMessage();
+                return false;
+            }
+
+           
+        }//end of get Specialities function
+
 
 
         //delete Attendee function
