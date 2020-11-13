@@ -6,8 +6,11 @@
     class SendEmail{
 
         public static function SendMail($to, $subject, $content){
-                    $key = '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';
 
+                    //variable key stores API
+                    $key = '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';
+
+                    //email object calling a new object of SendGrid
                     $email = new \SendGrid\Mail\Mail();
                     $email->setFrom("oracemundle@gmail.com","Orace Mundle" );
                     $email->setSubject($subject);
@@ -15,10 +18,11 @@
                     $email->addContent("text/plain", $content);
                     // $email->addContent("text/html", $content);
 
+                    //instantiating sendgrid object
                     $sendgrid = new \SendGrid($key);
 
                     try {
-                        //code...
+                        //call function send stored in respomse
                         $response = $sendgrid->send($email);
                         return $response;
 
@@ -26,7 +30,7 @@
 
                     } catch (Exception $e) {
                         //throw $th;
-                        echo 'Email Caught : ', $e->getMessage() . "\n";
+                        echo 'Email Exception Caught : ', $e->getMessage() . "\n";
                         return false;
 
                     }
