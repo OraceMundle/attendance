@@ -1,6 +1,6 @@
 <?php
 
-       require 'vender\autoload.php';
+       require 'vendor\autoload.php';
     
 
     class SendEmail{

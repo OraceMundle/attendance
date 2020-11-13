@@ -10,7 +10,8 @@
     {
         $username = strtolower(trim($_POST['username']));
         $password = $_POST['password'];
-        $new_password = md5($password.$password);
+        $new_password = md5($password.$username);
+        var_dump($new_password);
         //calling user object
         $result = $user->getUser($username,$new_password);
 
@@ -39,8 +40,7 @@
         <tr>
 
         <td><label for="username">Username: * </label></td>
-            <td><input type="text" name="username" class="form-control" id="username"  value="
-                <?php if($_SERVER['REQUEST_METHOD'] == 'POST') echo $_POST['username']; ?>" >
+            <td><input type="text" name="username" class="form-control" id="username"  value="<?php if($_SERVER['REQUEST_METHOD'] == 'POST') {echo $_POST['username'];} ?>" >
 
             </td>
            
@@ -67,7 +67,7 @@
     
     <br/>
     <br/>
-    <a href="a">Sign Up </a><br/> 
+    <a href="index.php">Sign up</a><br/> 
     <a href="a">Forget Password </a>
     
 

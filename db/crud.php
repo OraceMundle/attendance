@@ -154,7 +154,7 @@
                 //code...
                 $sql = "SELECT * FROM `specialities` WHERE speciality_id = :id";
                 $stmt = $this->db->prepare($sql);
-                $stmt->bindparm(':id', $id);
+                $stmt->bindparam(':id', $id);
                 $stmt->execute();
                 $result = $stmt->fetch();
                 return $result;
