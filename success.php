@@ -62,7 +62,7 @@
 
 
 <!-- Bootstrap Card Tiles component --> 
-<img src=" <?php echo $destination ?>" style="width: 20%, height: 20%;"/>
+<img src=" <?php echo $destination ?>" class="rounded-circle" style="width: 20%, height: 20%;"/>
 <br/>
 <br/>
 <div class="card" style="width: 25rem;">

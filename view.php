@@ -25,7 +25,9 @@
 
 
 <!-- Bootstrap Card Tiles component -->
-
+<img src=" <?php echo $results['avatar_path'] ?>" class="rounded-circle" style="width: 20%, height: 20%;"/>
+<br/>
+<br/>
 <div class="card" style="width: 25rem;">
     <div class="card-body">
         <h5 class="card-title"><?php echo $results['firstname'] . ' ' . $results['lastname'];   ?></h5>
