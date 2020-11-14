@@ -56,11 +56,13 @@
 <!-- H1 tag for Title page -->
 <br />
 <h1 class="text-center text-success">Registration Successful</h1>
+<h4 class="text-center text-success">Please check your email for confirmation</h4>
 <br />
 <br />
 
 
 <!-- Bootstrap Card Tiles component --> 
+<img src=" <?php echo $destination ?> "/>
 <div class="card" style="width: 25rem;">
     <div class="card-body">
         <h5 class="card-title"><?php echo $_POST['firstname'] . ' ' . $_POST['lastname'];   ?></h5>
