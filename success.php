@@ -20,24 +20,24 @@
 
         //upload file code path
         
-       // $avatar = $_POST['avatar'];
+              
         
         $orig_file = $_FILES["avatar"]["tmp_name"];
+        $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
         $target_dir = 'uploads/';
-        $destination = $target_dir . basename($_FILES["avatar"]["name"]);
+        $destination = "$target_dir$contact.$ext";
+        //$destination = $target_dir . basename($_FILES["avatar"]["name"]);
         move_uploaded_file($orig_file,$destination);
-
-        exit();
-
+       
         //Call function to insert and track if success or not
-        $isSuccess = $crud->insertAttendee($fname, $lname, $dob, $email, $contact, $speciality);
+        $isSuccess = $crud->insertAttendee($fname, $lname, $dob, $email, $contact, $speciality, $destination);
         $specialityName = $crud->getSpecialitiesById($speciality);
        
         if($isSuccess){
 
             //echo 'Registration Successful'; Not displaying
             //echo '<h1 class="text-center text-success">Registration Successful!!!</h1>';
-            SendEmail::SendMail($email, 'Welcome to IT Confernece 2020', 'You have successfully registered for this year\'s IT Conference ');
+            SendEmail::SendMail($email, 'Welcome' . ' ' . $fname . ' ' . $lname . ' ' . 'to IT Confernece 2020', 'You have successfully registered for this year\'s IT Conference ');
             include 'includes/successmessage.php';
 
          

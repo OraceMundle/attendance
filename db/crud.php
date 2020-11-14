@@ -14,11 +14,11 @@
         }
         
         //insert function
-        public function insertAttendee($fname, $lname, $dob, $email, $contact, $speciality){
+        public function insertAttendee($fname, $lname, $dob, $email, $contact, $speciality, $destination){
 
             try {
                 //define sql statement to be executed
-                $sql = "INSERT INTO attendee(firstname, lastname, dateofbirth, emailaddress, contactnumber, speciality_id ) VALUES (:fname, :lname, :dob, :email, :contact, :speciality)";
+                $sql = "INSERT INTO attendee(firstname, lastname, dateofbirth, emailaddress, contactnumber, speciality_id, avatar_path ) VALUES (:fname, :lname, :dob, :email, :contact, :speciality, :avatar_path)";
                 //prepare the sql ststement for execution 
                 $stmt = $this->db->prepare($sql);
                 //binding all placeholders to the actual values
@@ -28,6 +28,7 @@
                 $stmt->bindparam(':email', $email);
                 $stmt->bindparam(':contact', $contact);
                 $stmt->bindparam(':speciality', $speciality);
+                $stmt->bindparam(':avatar_path', $destination);
 
                 //execute statement
                 $stmt->execute();

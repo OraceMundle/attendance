@@ -23,7 +23,7 @@
 
 <!--<form method="get" action="success.php">  Snippet of code uses the get action method -->
 <!-- form utilizing the post method -->    
-<form method="post" action="success.php">
+<form method="post" action="success.php" enctype="multipart/form-data">
     <div class="form-group">
         <label for="firstname">First Name</label>
         <input required type="text" class="form-control" id="firstname" name="firstname" aria-describedby="text">
