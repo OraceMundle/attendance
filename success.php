@@ -5,6 +5,7 @@
     require_once 'includes/header.php'; 
     require_once 'db/conn.php';
     require_once 'sendemail.php';
+    
 
     
     //checking to see if 
@@ -16,7 +17,18 @@
         $email = $_POST['exampleInputEmail1'];
         $contact = $_POST['phone'];
         $speciality = $_POST['speciality']; 
+
+        //upload file code path
         
+       // $avatar = $_POST['avatar'];
+        
+        $orig_file = $_FILES["avatar"]["tmp_name"];
+        $target_dir = 'uploads/';
+        $destination = $target_dir . basename($_FILES["avatar"]["name"]);
+        move_uploaded_file($orig_file,$destination);
+
+        exit();
+
         //Call function to insert and track if success or not
         $isSuccess = $crud->insertAttendee($fname, $lname, $dob, $email, $contact, $speciality);
         $specialityName = $crud->getSpecialitiesById($speciality);
