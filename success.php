@@ -62,7 +62,9 @@
 
 
 <!-- Bootstrap Card Tiles component --> 
-<img src=" <?php echo $destination ?> "/>
+<img src=" <?php echo $destination ?>" style="width: 20%, height: 20%;"/>
+<br/>
+<br/>
 <div class="card" style="width: 25rem;">
     <div class="card-body">
         <h5 class="card-title"><?php echo $_POST['firstname'] . ' ' . $_POST['lastname'];   ?></h5>

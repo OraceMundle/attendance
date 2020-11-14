@@ -25,6 +25,7 @@
 
 
 <!-- Bootstrap Card Tiles component -->
+
 <div class="card" style="width: 25rem;">
     <div class="card-body">
         <h5 class="card-title"><?php echo $results['firstname'] . ' ' . $results['lastname'];   ?></h5>
