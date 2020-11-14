@@ -25,7 +25,7 @@
 
 
 <!-- Bootstrap Card Tiles component -->
-<img src=" <?php echo $results['avatar_path'] ?>" class="rounded-circle" style="width: 20%, height: 20%;"/>
+<img src=" <?php echo empty($results['avatar_path']) ? "uploads/defaultimage.png" : $results['avatar_path']; ?>" class="rounded-circle" style="width: 20%, height: 20%;"/>
 <br/>
 <br/>
 <div class="card" style="width: 25rem;">

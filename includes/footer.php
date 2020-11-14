@@ -1,4 +1,10 @@
-<div id="footer"><?php echo 'Copyright ' . date('Y'); ?></div>
+<div id="footer" class="p-3 bg-primary text-white fixed-bottom ">
+    <p class="text-center"> Copyright &copy; - IT Conference Attendance System <?php echo 'Copyright ' . date('Y'); ?>
+
+    </p>
+
+
+</div>
 
 </div>
 
