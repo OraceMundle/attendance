@@ -1,7 +1,7 @@
 <!--header-->
 <?php 
 
-    $title = 'Success';
+    $title='Success';
     require_once 'includes/header.php'; 
     require_once 'db/conn.php';
     require_once 'sendemail.php';
@@ -11,27 +11,27 @@
     //checking to see if 
     if(isset($_POST['submit'])){
         //extracting values from the $_POST array
-        $fname = $_POST['firstname'];
-        $lname = $_POST['lastname'];
-        $dob = $_POST['dob'];
-        $email = $_POST['exampleInputEmail1'];
-        $contact = $_POST['phone'];
-        $speciality = $_POST['speciality']; 
+        $fname=$_POST['firstname'];
+        $lname=$_POST['lastname'];
+        $dob=$_POST['dob'];
+        $email=$_POST['exampleInputEmail1'];
+        $contact=$_POST['phone'];
+        $speciality=$_POST['speciality']; 
 
         //upload file code path
         
               
         
-        $orig_file = $_FILES["avatar"]["tmp_name"];
-        $ext = pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
-        $target_dir = 'uploads/';
-        $destination = "$target_dir$contact.$ext";
+        $orig_file=$_FILES["avatar"]["tmp_name"];
+        $ext=pathinfo($_FILES["avatar"]["name"], PATHINFO_EXTENSION);
+        $target_dir='uploads/';
+        $destination="$target_dir$contact.$ext";
         //$destination = $target_dir . basename($_FILES["avatar"]["name"]);
         move_uploaded_file($orig_file,$destination);
        
         //Call function to insert and track if success or not
-        $isSuccess = $crud->insertAttendee($fname, $lname, $dob, $email, $contact, $speciality, $destination);
-        $specialityName = $crud->getSpecialitiesById($speciality);
+        $isSuccess=$crud->insertAttendee($fname,$lname,$dob,$email,$contact,$speciality,$destination);
+        $specialityName=$crud->getSpecialitiesById($speciality);
        
         if($isSuccess){
 
