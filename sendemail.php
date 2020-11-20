@@ -8,7 +8,7 @@
         public static function SendMail($to, $subject, $content){
 
                     //variable key stores API
-                    $key = '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';
+                    $key = ' ';
 
                     //email object calling a new object of SendGrid
                     $email = new \SendGrid\Mail\Mail();
