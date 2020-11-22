@@ -1,15 +1,22 @@
 <?php
 
-       require 'vendor\autoload.php';
-    
+use Dotenv\Dotenv;
+
+require 'vendor\autoload.php';
+require  'vendor\vlucas\phpdotenv\src\Dotenv.php';
+       
 
     class SendEmail{
 
         public static function SendMail($to, $subject, $content){
 
                     //variable key stores API
-                    $key = ' ';
+                    $key=Dotenv\Dotenv::createImmutable(__DIR__,"/..");
+                    $key->load();
 
+
+                    //$key = getenv('API_KEY');
+                                       
                     //email object calling a new object of SendGrid
                     $email = new \SendGrid\Mail\Mail();
                     $email->setFrom("mundlepoo@hotmail.com","Orace Mundle" );
