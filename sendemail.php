@@ -3,7 +3,8 @@
 use Dotenv\Dotenv;
 
 require 'vendor\autoload.php';
-require  'vendor\vlucas\phpdotenv\src\Dotenv.php';
+//require  'vendor\vlucas\phpdotenv\src\Dotenv.php';
+
        
 
     class SendEmail{
